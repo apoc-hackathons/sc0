@@ -1,20 +1,5 @@
 <template>
-  <head>
-    <script>
-      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-      if (
-        localStorage.getItem("color-theme") === "dark" ||
-        (!("color-theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    </script>
-  </head>
-
-  <main class="bg-gray-200 dark:bg-slate-800 min-h-screen">
+  <main class="bg-slate-800 min-h-screen">
     <slot />
   </main>
 </template>
