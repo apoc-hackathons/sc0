@@ -25,8 +25,14 @@
   <body class="bg-slate-800 min-h-screen">
     <div class="navbar bg-slate-700">
       <div class="flex-1">
+        <div class="drawer-content">
+          <!-- Page content here -->
+          <label for="my-drawer" class="btn btn-ghost btn-circle drawer-button">
+            <Icon name="ci:hamburger-lg" class="w-6 h-6" />
+          </label>
+        </div>
         <a href="/" class="btn btn-ghost font-extrabold normal-case text-xl"
-          >DumbShit</a
+          >EduApp</a
         >
       </div>
       <div class="flex-none">
@@ -57,6 +63,22 @@
             <li @click="logout"><a>Logout</a></li>
           </ul>
         </div>
+      </div>
+    </div>
+
+    <div class="drawer z-50">
+      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+
+      <div class="drawer-side">
+        <label for="my-drawer" class="drawer-overlay"></label>
+
+        <ul class="menu p-4 w-80 h-full bg-slate-800 text-base-content">
+          <a href="/" class="btn btn-ghost font-extrabold normal-case text-xl"
+            >EduApp</a
+          >
+          <!-- Sidebar content here -->
+          <li><a href="/">Home</a></li>
+        </ul>
       </div>
     </div>
     <main class="text-white">
