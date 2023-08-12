@@ -7,6 +7,8 @@ export default defineNuxtPlugin((nuxtApp) => {
     authorizationParams: {
       redirect_uri: "http://localhost:3000/",
     },
+    cacheLocation: "localstorage",
+    useRefreshTokens: true,
   });
 
   if (process.client) {
