@@ -1,9 +1,51 @@
 <script lang="ts" setup>
+  const questions = [
+    {
+      question: "What's 1 + 1?",
+      answers: ["1", "2", "3", "4"],
+      correctAns: 1,
+    },
+    {
+      question: "What's 1 + 2?",
+      correctAns: 2,
+      answers: ["1", "2", "3", "4"],
+    },
+    {
+      question: "What's 1 + 1?",
+      answers: ["1", "2", "3", "4"],
+      correctAns: 1,
+    },
+    {
+      question: "What's 1 + 1?",
+      answers: ["1", "2", "3", "4"],
+      correctAns: 1,
+    },
+    {
+      question: "What's 1 + 1?",
+      answers: ["1", "2", "3", "4"],
+      correctAns: 1,
+    },
+    {
+      question: "What's 1 + 1?",
+      answers: ["1", "2", "3", "4"],
+      correctAns: 1,
+    },
+    {
+      question: "What's 1 + 1?",
+      answers: ["1", "2", "3", "4"],
+      correctAns: 1,
+    },
+  ];
+
+  const currentQues = ref(0);
   const aChecked = ref(false);
   const bChecked = ref(false);
   const cChecked = ref(false);
   const dChecked = ref(false);
   const correct = ref(false);
+
+  const correctAnswers = ref<String[]>();
+  const wrongAnswers = ref<String[]>();
 
   const checkedNum = computed(() => {
     let num = 0;
@@ -14,12 +56,13 @@
     return num;
   });
 
-  const checkAns = () => {
-    const correctAns = 2;
-    if (checkedNum.value - 1 === correctAns) {
-      console.log("correcttt");
+  const checkCorrect = () => {
+    if (checkedNum.value - 1 === questions[currentQues.value].correctAns) {
+      correct.value = true;
+      return true;
     }
-    correct.value = true;
+    correct.value = false;
+    return false;
   };
 </script>
 
@@ -28,7 +71,9 @@
     <div class="p-5">
       <div class="card max-w-full bg-slate-700">
         <div class="card-body">
-          <h2 class="card-title">What is 1 + 1?</h2>
+          <h2 class="card-title">
+            {{ currentQues + 1 }}. {{ questions[currentQues].question }}
+          </h2>
           <div class="grid grid-cols-2">
             <label class="flex cursor-pointer mt-3">
               <input
@@ -37,7 +82,9 @@
                 class="checkbox checkbox-primary"
                 :disabled="bChecked || cChecked || dChecked"
               />
-              <span class="text-white ml-2">1 </span>
+              <span class="text-white ml-2">
+                {{ questions[currentQues].answers[0] }}
+              </span>
             </label>
             <label class="flex cursor-pointer mt-3">
               <input
@@ -46,7 +93,9 @@
                 class="checkbox checkbox-primary"
                 :disabled="aChecked || cChecked || dChecked"
               />
-              <span class="text-white ml-2">yes</span>
+              <span class="text-white ml-2">{{
+                questions[currentQues].answers[1]
+              }}</span>
             </label>
             <label class="flex cursor-pointer mt-3">
               <input
@@ -55,7 +104,9 @@
                 :disabled="aChecked || bChecked || dChecked"
                 class="checkbox checkbox-primary"
               />
-              <span class="text-white ml-2">2</span>
+              <span class="text-white ml-2">{{
+                questions[currentQues].answers[2]
+              }}</span>
             </label>
             <label class="flex cursor-pointer mt-3">
               <input
@@ -64,14 +115,16 @@
                 v-model="dChecked"
                 class="checkbox checkbox-primary"
               />
-              <span class="text-white ml-2">2</span>
+              <span class="text-white ml-2">{{
+                questions[currentQues].answers[3]
+              }}</span>
             </label>
           </div>
 
           <div class="card-actions justify-start mt-5">
             <button
               :disabled="!checkedNum"
-              @click="checkAns"
+              @click="checkCorrect"
               class="btn btn-primary"
             >
               Next
