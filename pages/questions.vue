@@ -176,7 +176,6 @@
           </div>
         </div>
       </div>
-      {{ correct ? "Correct!" : "" }}
     </div>
 
     <div class="hero h-screen" v-if="done">

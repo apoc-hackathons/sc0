@@ -5,7 +5,10 @@
         <div class="max-w-md">
           <h1 class="text-5xl font-bold text-discord-blurple">EduApp</h1>
           <p class="text-3xl my-5">Tests made easy</p>
-          <a v-if="isAuthenticated" href="/guilds" class="mt-4 btn btn-primary"
+          <a
+            v-if="isAuthenticated"
+            href="/questions"
+            class="mt-4 btn btn-primary"
             >Take test</a
           >
           <button

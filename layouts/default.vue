@@ -36,14 +36,14 @@
         >
       </div>
       <div class="flex-none">
-        <div v-if="!auth0?.user?.value?.name" class="dropdown dropdown-end">
+        <div v-if="!isAuthenticated" class="dropdown dropdown-end">
           <a tabindex="0" class="btn btn-ghost btn-circle" @click="login">
             <div class="indicator">
               <Icon name="ic:outline-login" class="w-6 h-6" />
             </div>
           </a>
         </div>
-        <div v-if="auth0?.user?.value?.picture" class="dropdown dropdown-end">
+        <div v-if="isAuthenticated" class="dropdown dropdown-end">
           <label tabindex="0" class="btn btn-ghost btn-circle avatar">
             <div class="w-10 rounded-full">
               <img :src="auth0?.user?.value?.picture" />
@@ -75,7 +75,7 @@
           >
           <!-- Sidebar content here -->
           <li><a href="/">Home</a></li>
-          <li v-if="auth0?.user.value?.sub">
+          <li v-if="isAuthenticated">
             <a href="/questions">Take test</a>
           </li>
         </ul>
