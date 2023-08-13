@@ -42,6 +42,24 @@
       answers: ["1", "2", "3", "4"],
       correctAns: 1,
     },
+    {
+      _id: "sjldfjsfsdfsfdl1",
+      question: "What's 1 + 1?",
+      answers: ["1", "2", "3", "4"],
+      correctAns: 1,
+    },
+    {
+      _id: "sjldfjsfsdfsfdl1",
+      question: "What's 1 + 1?",
+      answers: ["1", "2", "3", "4"],
+      correctAns: 1,
+    },
+    {
+      _id: "sjldfjsfsdfsfdl1",
+      question: "What's 1 + 1?",
+      answers: ["1", "2", "3", "4"],
+      correctAns: 1,
+    },
   ];
 
   const currentQues = ref(0);
