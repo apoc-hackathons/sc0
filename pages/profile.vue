@@ -1,6 +1,6 @@
 <template>
   <client-only>
-    <div class="flex p-5">
+    <div class="p-5">
       <div class="card w-96 bg-slate-700 mr-5">
         <div class="card-body">
           <img
@@ -19,9 +19,11 @@
           <p class="font-bold">Recent tests</p>
           <ul>
             <li
+              v-for="sub in history"
+              :key="sub._id"
               class="border-y-gray-400/50 first:border-b-2 first:border-t-0 border-b-2 last:border-y-0"
             >
-              sexy - 5/69
+              {{ sub.subject }} - {{ sub.score }}/10
             </li>
           </ul>
         </div>
@@ -43,4 +45,6 @@
   const user = computed(() => {
     return auth0?.user.value;
   });
+
+  const { data: history } = await useFetch("/api/history");
 </script>
