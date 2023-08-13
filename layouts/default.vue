@@ -19,6 +19,10 @@
       },
     });
   };
+
+  useSeoMeta({
+    title: "StatusEdu",
+  });
 </script>
 
 <template>
@@ -32,7 +36,7 @@
           </label>
         </div>
         <a href="/" class="btn btn-ghost font-extrabold normal-case text-xl"
-          >EduApp</a
+          >StatusEdu</a
         >
       </div>
       <div class="flex-none">
@@ -56,7 +60,6 @@
             <li>
               <a class="justify-between" href="/profile"> Profile </a>
             </li>
-            <li><a>Settings</a></li>
             <li @click="logout"><a>Logout</a></li>
           </ul>
         </div>
@@ -77,6 +80,9 @@
           <li><a href="/">Home</a></li>
           <li v-if="isAuthenticated">
             <a href="/questions">Take test</a>
+          </li>
+          <li v-if="isAuthenticated">
+            <a href="/profile">Profile</a>
           </li>
         </ul>
       </div>

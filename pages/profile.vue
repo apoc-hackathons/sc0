@@ -1,7 +1,7 @@
 <template>
   <client-only>
-    <div class="p-5">
-      <div class="card w-96 bg-slate-700">
+    <div class="flex p-5">
+      <div class="card w-96 bg-slate-700 mr-5">
         <div class="card-body">
           <img
             :src="user?.picture"
@@ -14,11 +14,9 @@
           <p>@{{ user?.nickname }}</p>
         </div>
       </div>
-
       <div class="mt-5 card w-96 bg-slate-700">
         <div class="card-body">
           <p class="font-bold">Recent tests</p>
-
           <ul>
             <li
               class="border-y-gray-400/50 first:border-b-2 first:border-t-0 border-b-2 last:border-y-0"
