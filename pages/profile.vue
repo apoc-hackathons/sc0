@@ -9,9 +9,23 @@
             class="rounded-full w-40"
           />
           <p class="text-xl">
-            Greetings <span class="font-bold">{{ user?.name }}</span>
+            Greetings <span class="font-bold">{{ user?.given_name }}</span>
           </p>
           <p>@{{ user?.nickname }}</p>
+        </div>
+      </div>
+
+      <div class="mt-5 card w-96 bg-slate-700">
+        <div class="card-body">
+          <p class="font-bold">Recent tests</p>
+
+          <ul>
+            <li
+              class="border-y-gray-400/50 first:border-b-2 first:border-t-0 border-b-2 last:border-y-0"
+            >
+              sexy - 5/69
+            </li>
+          </ul>
         </div>
       </div>
     </div>
